@@ -2,17 +2,21 @@
   "layer": "top",
   "modules-left": [
     "hyprland/workspaces",
-    "sway/mode"
+    "sway/mode",
+          "custom/spotify"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
+
     "group/misc",
     "network",
     "pulseaudio",
     "bluetooth",
+  
     "custom/power",
+    //"custom/wlogout",
     "battery"
   ],
   "sway/window": {
@@ -35,6 +39,29 @@
   "clock": {
     "format-alt": "{:%a, %d. %b  %H:%M}"
   },
+  "custom/swaync": {
+    "exec": "swaync-client -swb",
+    "return-type": "json",
+    "format": "{alt}",
+    "format-icons": {
+      "none": "",
+      "notification": "🔔"
+    },
+    "on-click": "swaync-client -t",
+    "on-click-right": "swaync-client -C",
+    "on-click-middle": "swaync-client -R",
+    "interval": 1,
+    "persistent": true
+  },
+  "custom/spotify": {
+    "max-length": 20,
+    "escape": true,
+    "exec": "~/.config/waybar/mediaplayer.py",
+     "interval": 1,
+    "on-click": "playerctl -p spotify play-pause",
+    "return-type": "json",
+    "exec-if": "playerctl -l | grep -q spotify"
+  },
   "custom/power": {
     "format": "⏻ ",
     "tooltip": false,
@@ -46,6 +73,13 @@
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate"
     }
+  },
+  "custom/wlogout": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-text": "Logout / Power Menu",
+    "on-click": "wlogout -b 5 -c 0 -r 0 -L 350 -R 350",
+    "interval": 3600
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -93,18 +127,17 @@
     "max-length": 30
   },
   "hyprland/workspaces": {
-	"format": "{name}: {icon}",
-	"format-icons": {
-		"1": "󰖟",
-		"2": "",
-		"3": "󰮯",
-		"4": "",
-		"5": "",
-		"6": ""
-	},
-       "persistent-workspaces": {
-             "*": 6 // 5 workspaces by default on every monitor
-             
-       }
-}
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "1": "󰖟",
+      "2": "",
+      "3": "󰮯",
+      "4": "",
+      "5": "",
+      "6": ""
+    },
+    "persistent-workspaces": {
+      "*": 6 // 5 workspaces by default on every monitor
+    }
+  }
 }

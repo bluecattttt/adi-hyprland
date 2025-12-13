@@ -118,3 +118,18 @@ menuitem:hover {
     color: #ffffff;
 }
 
+#custom-swaync {
+    padding: 0 10px;
+    font-size: 14px;
+    color: rgb(255, 0, 0);
+}
+#custom-spotify {
+    font-weight: 600;
+    padding: 6px 14px;       /* controls height/width visually */
+    border-radius: 999px;
+    margin-right: 10px;
+    background: #121212;
+    color: #ffffff;
+    border: 1px solid #e2e2e2;
+    font-size: 13px;
+}
