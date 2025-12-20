@@ -1,0 +1,1 @@
+added some animations for workspaces, switched to rofi, will add a new preview after adding a theme switcher
