@@ -1,0 +1,170 @@
+* {
+    font: "Courier New";
+    g-spacing: 12px;
+    g-margin: 0;
+    b-color: #000000FF;
+    fg-color: #FFFFFFFF;
+    fgp-color: #ffffffff;
+    b-radius: 10px;
+    g-padding: 10px;
+    hl-color: #FFFFFFFF;
+    hlt-color: #000000ff;
+    alt-color: #000000ff;
+    wbg-color: #000000ff;
+    w-border: 1px solid;
+    w-border-color: #FFFFFFFF;
+    w-padding: 20px;
+}
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "Apps";
+}
+listview {
+    columns: 4;
+    lines: 3;
+
+    fixed-columns: true;
+    fixed-height: false;
+
+    spacing: 20px;
+    scrollbar: false;
+}
+
+
+element {
+    orientation: vertical;
+    spacing: 8px;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+
+element-icon {
+    size: 64px;        /* icon size */
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+
+window {
+    transparency: "real";
+    width: 1000px;
+    border-radius: @b-radius;
+    background-color: @wbg-color;
+    border: @w-border;
+    border-color: @w-border-color;
+    padding: @w-padding;
+}
+
+prompt {
+    text-color: @fg-color;
+}
+
+inputbar {
+children: ["prompt", "entry"];
+    spacing: @g-spacing;
+}
+
+entry {
+    placeholder: "";
+    text-color: @fg-color;
+    placeholder-color: @fgp-color;
+}
+
+mainbox {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    children: ["inputbar", "listview", "message"];
+}
+
+element {
+    spacing: @g-spacing;
+    margin: @g-margin;
+    padding: @g-padding;
+    border: 0px solid;
+    border-radius: @b-radius;
+    border-color: @b-color;
+    background-color: transparent;
+    text-color: @fg-color;
+}
+
+element normal.normal {
+	background-color: transparent;
+	text-color: @fg-color;
+}
+
+element alternate.normal {
+	background-color: @alt-color;
+	text-color: @fg-color;
+}
+
+element selected.active {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+element selected.normal {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+message {
+    background-color: red;
+    border: 0px solid;
+}
+drun {
+    display-generic: false;
+}
+separator {
+    background-color: #ffffff;
+    height: 3px;          /* thickness */
+    margin: 8px 0px;
+}
+
+separator.horizontal {
+    background-color: #ffffff;
+}
+
+inputbar {
+    border: 0px 0px 3px 0px;
+    border-color: #ffffff;
+}
+/* Kill inputbar underline */
+inputbar {
+    border: 0px;
+    background-color: transparent;
+}
+
+/* Kill listview top border */
+listview {
+    border: 0px;
+    background-color: transparent;
+}
+
+/* Kill textbox underlines (THIS is the faint line) */
+textbox {
+    border: 0px;
+    background-color: transparent;
+}
+
+/* Kill prompt underline */
+prompt {
+    border: 0px;
+    background-color: transparent;
+}
+
+/* Kill entry underline */
+entry {
+    border: 0px;
+    background-color: transparent;
+}
+
+
