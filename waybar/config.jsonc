@@ -14,9 +14,10 @@
     "network",
     "pulseaudio",
     "bluetooth",
+    "tray",
   
     "custom/power",
-    //"custom/wlogout",
+    "custom/wlogout",
     "battery"
   ],
   "sway/window": {
@@ -36,6 +37,7 @@
       ""
     ]
   },
+   
   "clock": {
     "format-alt": "{:%a, %d. %b  %H:%M}"
   },
@@ -62,23 +64,11 @@
     "return-type": "json",
     "exec-if": "playerctl -l | grep -q spotify"
   },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "~/.config/waybar/power_menu.xml",
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
-  },
+ 
   "custom/wlogout": {
-    "format": "",
+    "format": "⏻ ",
     "tooltip": true,
-    "tooltip-text": "Logout / Power Menu",
-    "on-click": "wlogout -b 5 -c 0 -r 0 -L 350 -R 350",
+    "on-click": "wlogout",
     "interval": 3600
   },
   "pulseaudio": {
@@ -112,20 +102,29 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager"
+    "on-click": "overskride"
   },
-  "network": {
-    "interface": "enp46s0",
-    "format": "{ifname}",
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "", //An empty format will hide the module.
-    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 30
-  },
+ "network": {
+  "interface": "enp46s0",
+  "format-wifi": "{essid} ({signalStrength}%) ",
+  "format-ethernet": "Internet 󰣺",
+  "format-disconnected": "No Internet 󰣼",
+  "tooltip-format-ethernet": "Connected via Ethernet",
+  "tooltip-format-disconnected": "Disconnected",
+  "max-length": 30,
+  "on-click": "iwgtk"
+},
+
+"tray": {
+	"icon-size": 35,
+	"spacing": 1,
+  "icons": {
+   
+    "steam": "/home/adi/.local/share/icons/icons-folder/steam1.svg",
+    "discord": "/home/adi/.local/share/icons/icons-folder/discord.svg"
+    
+  }
+},
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
     "format-icons": {

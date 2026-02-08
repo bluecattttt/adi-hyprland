@@ -88,8 +88,9 @@ tooltip label {
     color: rgb(255, 255, 255);
     border: 1px solid rgb(226, 226, 226);
 }
-#custom-power {
-    font-weight: 700;
+
+#custom-wlogout {
+       font-weight: 700;
     border-radius: 100px;
     min-width: 50px;
     margin-right: 2px;
@@ -133,3 +134,4 @@ menuitem:hover {
     border: 1px solid #e2e2e2;
     font-size: 13px;
 }
+

@@ -1,0 +1,53 @@
+* {
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+window {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+button {
+    background: #dfdfdf;
+    color: #000000;
+    border: 2px solid black;
+    border-radius: 0px;
+	background-size: 80px 80px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+}
+
+button:hover,
+button:focus,
+button:active {
+	background-size: 40%;
+	border: 5px solid black;
+}
+
+#lock {
+    background-image: image(url("/home/adi/.config/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/home/adi/.config/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/adi/.config/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/home/adi/.config/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/home/adi/.config/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/adi/.config/wlogout/icons/reboot.png"));
+}
