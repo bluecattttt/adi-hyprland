@@ -120,8 +120,8 @@
 	"spacing": 1,
   "icons": {
    
-    "steam": "/home/adi/.local/share/icons/icons-folder/steam1.svg",
-    "discord": "/home/adi/.local/share/icons/icons-folder/discord.svg"
+    "steam": "/home/adi/.config/waybar/icons/steam1.svg",
+    "discord": "/home/adi/.config/waybar/icons/discord.svg"
     
   }
 },
