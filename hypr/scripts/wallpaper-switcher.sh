@@ -8,6 +8,9 @@ choice=$(find "$WALLDIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "
 [ -z "$choice" ] && exit 0
 
 swww img "$WALLDIR/$choice" \
-  --transition-type wipe \
+  --transition-type any \
   --transition-duration 2 \
   --transition-fps 144
+
+mkdir -p "$HOME/.cache/swww"
+echo "$WALLDIR/$choice" > "$HOME/.cache/swww/last_wallpaper"
